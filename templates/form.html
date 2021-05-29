@@ -1,0 +1,38 @@
+<!doctype html>
+ <html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Movie Recommendation System</title>
+  </head>
+  <body>
+    <style>
+      .mask-custom {
+        backdrop-filter: contrast(140%) brightness(100%) saturate(100%) sepia(50%)
+          hue-rotate(0deg) grayscale(0%) invert(0%) blur(0px);
+        mix-blend-mode: lighten;
+        background: rgba(161, 44, 199, 0.31);
+        opacity: 1;
+      }
+    </style>
+    
+    <!-- Background image -->
+    <div
+      class="bg-image"
+      style="
+        background-image: url('https://mdbcdn.b-cdn.net/img/new/fluid/nature/018.jpg');
+        height: 100vh;
+      "
+    >
+      <div class="mask mask-custom"></div>
+      <br><br>
+      <h1 style="text-align: center;color:whitesmoke;"> Suggested Movies</h1>
+      <table border = 1 style="position: relative; width: 45%; top: 1%; left: 30%">
+        {% for value in result: %}
+        <tr>
+           <td> <h4 style="text-align: center; color:whitesmoke;">{{ value }} </h4></td>
+        </tr>
+        {% endfor %}
+     </table>
+    </div>
+  </body>
+</html>
